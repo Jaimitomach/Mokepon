@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mokepon - Combate Mejorado</title>
+
+  <!-- Vincula el archivo de estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Título principal del juego -->
+  <h1>Mokepon</h1>
+
+  <!-- Sección para seleccionar mascota -->
+  <section id="seleccionar-mascota">
+    <h2>Selecciona tu mascota</h2>
+
+    <!-- Contenedor de tarjetas -->
+    <div class="tarjetas-container">
+      <!-- Tarjeta Hipodoge -->
+      <label class="tarjeta fuego">
+        <input type="radio" name="mascota" id="hipodoge" hidden>
+        <img src="img/hipodoge.png" alt="Hipodoge">
+        <p>Hipodoge</p>
+      </label>
+
+      <!-- Tarjeta Capipepo -->
+      <label class="tarjeta tierra">
+        <input type="radio" name="mascota" id="capipepo" hidden>
+        <img src="img/capipepo.png" alt="Capipepo">
+        <p>Capipepo</p>
+      </label>
+
+      <!-- Tarjeta Ratigueya -->
+      <label class="tarjeta agua">
+        <input type="radio" name="mascota" id="ratigueya" hidden>
+        <img src="img/ratigueya.png" alt="Ratigueya">
+        <p>Ratigueya</p>
+      </label>
+    </div>
+
+    <!-- Botón para confirmar la mascota -->
+    <button id="boton-mascota">Confirmar mascota</button>
+
+    <!-- Vista previa de la mascota seleccionada -->
+    <div id="vista-previa" class="oculto">
+      <h3>Tu elección:</h3>
+      <p id="preview-nombre"></p>
+      <img id="preview-img" src="" alt="Vista previa">
+    </div>
+  </section>
+
+  <!-- Sección de combate: selección de ataque -->
+  <section id="seleccionar-ataque" class="oculto">
+    <div class="info-combate">
+      <!-- Info jugador -->
+      <div class="mascota-info">
+        <h3 id="mascota-jugador"></h3>
+        <img id="img-jugador" class="sprite" src="" alt="Jugador">
+        <div class="vida-contenedor">
+          <span>❤️</span><span id="vidas-jugador">3</span>
+          <div id="barra-vida-jugador" class="barra-vida"></div>
+        </div>
+      </div>
+
+      <!-- Info enemigo -->
+      <div class="mascota-info">
+        <h3 id="mascota-enemigo"></h3>
+        <img id="img-enemigo" class="sprite" src="" alt="Enemigo">
+        <div class="vida-contenedor">
+          <span>❤️</span><span id="vidas-enemigo">3</span>
+          <div id="barra-vida-enemigo" class="barra-vida"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones de ataque -->
+    <div class="botones">
+      <button id="boton-fuego">🔥 FUEGO</button>
+      <button id="boton-agua">💧 AGUA</button>
+      <button id="boton-tierra">🌱 TIERRA</button>
+      <button id="lanzar-ataque" class="oculto">¡Lanzar ataque!</button>
+    </div>
+
+    <!-- Sección de mensajes de combate -->
+    <div id="mensajes"></div>
+
+    <!-- Botón para reiniciar el juego -->
+    <div id="reiniciar" class="oculto">
+      <button id="boton-reiniciar">Reiniciar juego</button>
+    </div>
+  </section>
+
+  <!-- Vincula el script JS -->
+  <script src="mokepon.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* Estilos generales del cuerpo */
+body {
+  font-family: 'Segoe UI', sans-serif; /* Fuente legible y moderna */
+  background-image: url("img/fondo.png"); /* Imagen de fondo personalizada */
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  background-position: center; /* Centra la imagen de fondo */
+  color: white; /* Texto blanco para mejor contraste */
+  text-align: center; /* Centrado de texto general */
+  margin: 0; /* Quita márgenes por defecto */
+  padding: 0; /* Quita relleno por defecto */
+}
+
+/* Título principal */
+h1 {
+  padding: 1rem; /* Espaciado interno */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para destacar */
+}
+
+/* Espaciado entre secciones */
+section {
+  margin-top: 2rem;
+}
+
+/* Contenedor de tarjetas de selección */
+.tarjetas-container {
+  display: flex;
+  justify-content: center; /* Centra las tarjetas */
+  gap: 1rem; /* Espacio entre tarjetas */
+}
+
+/* Estilo general de cada tarjeta de mascota */
+.tarjeta {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer; /* Cursor en forma de mano al pasar */
+  transition: transform 0.3s; /* Suaviza el efecto al hacer hover */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+/* Tamaño estándar de la imagen en tarjeta */
+.tarjeta img {
+  width: 100px;
+  height: auto;
+}
+
+/* Colores temáticos según tipo de mascota */
+.tarjeta.fuego { background-color: rgba(255, 100, 100, 0.2); }
+.tarjeta.agua { background-color: rgba(100, 100, 255, 0.2); }
+.tarjeta.tierra { background-color: rgba(100, 255, 100, 0.2); }
+
+/* Vista previa de la mascota seleccionada */
+#vista-previa img {
+  width: 120px;
+  margin-top: 1rem;
+}
+
+/* Botones de ataques */
+.botones button {
+  padding: 0.7rem 1.5rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Efecto al pasar el mouse sobre los botones */
+.botones button:hover {
+  transform: scale(1.1);
+}
+
+/* Sección del combate con información de ambos jugadores */
+.info-combate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+}
+
+/* Contenedor de información de una mascota */
+.mascota-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagen de la mascota durante el combate */
+.sprite {
+  width: 120px;
+  transition: all 0.5s ease;
+}
+
+/* Imagen del jugador sin reflejo */
+#img-jugador {
+  transform: scaleX(1);
+}
+
+/* Contenedor de vida con ícono y barra */
+.vida-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Barra visual de vida */
+.barra-vida {
+  height: 10px;
+  width: 60px;
+  background-color: limegreen;
+  border-radius: 5px;
+  transition: width 0.3s; /* Animación al perder vida */
+}
+
+/* Botón especial de lanzar ataque */
+#lanzar-ataque {
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  animation: parpadeo-boton 1s infinite alternate; /* Animación de brillo */
+}
+
+/* Estado desactivado del botón */
+#lanzar-ataque:disabled {
+  background-color: #999;
+  color: #666;
+  box-shadow: none;
+  animation: none;
+  cursor: not-allowed;
+}
+
+/* Animación de parpadeo del botón */
+@keyframes parpadeo-boton {
+  0% { transform: scale(1); box-shadow: 0 0 10px yellow; }
+  100% { transform: scale(1.05); box-shadow: 0 0 20px orange; }
+}
+
+/* Oculta cualquier elemento con esta clase */
+.oculto {
+  display: none;
+}
+
+/* Animación visual al ganar */
+.animacion-ganar {
+  animation: brillar 1s infinite alternate;
+}
+
+/* Animación visual al perder */
+.animacion-perder {
+  animation: parpadear 0.4s infinite;
+}
+
+/* Brillo al ganar */
+@keyframes brillar {
+  0% { filter: drop-shadow(0 0 5px yellow); }
+  100% { filter: drop-shadow(0 0 15px orange); }
+}
+
+/* Parpadeo al perder */
+@keyframes parpadear {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
